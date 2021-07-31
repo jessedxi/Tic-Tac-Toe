@@ -2,10 +2,10 @@ export default class GameDisplay {
   constructor(root) {
     this.root = root;
     this.root.innerHTML = `
-          <div class="header">
+          <div class="gameHeader">
               <div class="gameHeader__turn"> Blue Turn</div>
               <div class="gameHeader__gameStatus"> In Progress...</div>
-              <button type="button" class="gameHeader__gameRestart">
+              <button type="button" class="gameHeader__button">
                   restart
               </button>
           </div>
