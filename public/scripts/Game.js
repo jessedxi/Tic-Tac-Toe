@@ -7,4 +7,9 @@ export default class Game {
   toggleTurn() {
     this.turn = this.turn === "Blue" ? "Yellow" : "Blue";
   }
+
+  placeColor(index) {
+    this.grid[index] = this.turn;
+    this.toggleTurn();
+  }
 }
