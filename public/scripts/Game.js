@@ -69,4 +69,8 @@ export default class Game {
     }
     return gameWon;
   }
+
+  finished() {
+    return this.checkForWin() && !this.grid.includes(null);
+  }
 }
