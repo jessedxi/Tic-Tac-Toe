@@ -19,12 +19,18 @@ export default class Game {
   }
 
   placeColor(index) {
+    if (this.finished()) {
+      return;
+    }
+
     if (this.board[index]) {
       return;
     }
 
     this.grid[index] = this.turn;
-    this.toggleTurn();
+    if (!this.checkForWin()) {
+      this.toggleTurn();
+    }
   }
 
   checkForWin() {
