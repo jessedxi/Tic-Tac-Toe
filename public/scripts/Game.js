@@ -56,13 +56,17 @@ export default class Game {
 
   checkWin() {
     let combinations = this.grid.reduce(
-      (acc, elem, index) => (elem === this.turn ? acc.concat(index) : acc, [])
+      (acc, color, square) => (
+        color === this.turn ? acc.concat(square) : acc, []
+      )
     );
     let gameWon = null;
-    for (let [i, win] of this.possibleWins.entries()) {
+    for (let [index, win] of this.possibleWins.entries()) {
       if (win.every((element) => combinations.idexOf(element > -1))) {
-        gameWon = { index: i, player: this.turn };
+        gameWon = { index: index, player: this.turn };
+        break;
       }
     }
+    return gameWon;
   }
 }
