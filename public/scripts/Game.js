@@ -9,6 +9,10 @@ export default class Game {
   }
 
   placeColor(index) {
+    if (this.board[index]) {
+      return;
+    }
+
     this.grid[index] = this.turn;
     this.toggleTurn();
   }
