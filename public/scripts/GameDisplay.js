@@ -6,19 +6,19 @@ export default class GameDisplay {
               <div class="gameHeader__turn"> Blue Turn</div>
               <div class="gameHeader__gameStatus"> In Progress...</div>
               <button type="button" class="gameHeader__button">
-                  restart
+                  RESTART
               </button>
           </div>
-          <div class="board">
-              <div class="board__tile" data-index="0"></div>
-              <div class="board__tile" data-index="1"></div>
-              <div class="board__tile" data-index="2"></div>
-              <div class="board__tile" data-index="3"></div>
-              <div class="board__tile" data-index="4"></div>
-              <div class="board__tile" data-index="5"></div>
-              <div class="board__tile" data-index="6"></div>
-              <div class="board__tile" data-index="7"></div>
-              <div class="board__tile" data-index="8"></div>
+          <div class="gameGrid">
+              <div class="gameGrid__tile" data-index="0"></div>
+              <div class="gameGrid__tile" data-index="1"></div>
+              <div class="gameGrid__tile" data-index="2"></div>
+              <div class="gameGrid__tile" data-index="3"></div>
+              <div class="gameGrid__tile" data-index="4"></div>
+              <div class="gameGrid__tile" data-index="5"></div>
+              <div class="gameGrid__tile" data-index="6"></div>
+              <div class="gameGrid__tile" data-index="7"></div>
+              <div class="gameGrid__tile" data-index="8"></div>
           </div>
       `;
   }
