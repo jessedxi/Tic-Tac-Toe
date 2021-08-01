@@ -21,5 +21,22 @@ export default class GameDisplay {
               <div class="gameGrid__tile" data-index="8"></div>
           </div>
       `;
+
+    this.onTileClick = undefined;
+    this.onRestart = undefined;
+
+    this.root.querySelectorAll(".gameGrid__tile").forEach((tile) => {
+      tile.addEventListener("click", () => {
+        this.onTileClick(tile.dataset.index);
+      });
+    });
+
+    this.root
+      .querySelector(".gameGeader__button")
+      .addEventListener("click", () => {
+        if (this.onRestart) {
+          this.onRestart();
+        }
+      });
   }
 }
