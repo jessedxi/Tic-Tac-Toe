@@ -8,17 +8,19 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(grey, white);
+  background-image: linear-gradient(lightblue, lightyellow);
+}
+#title {
+  color: black;
 }
 #app {
-  color: white;
   background-color: black;
   display: flex;
   flex-direction: column;
   font-weight: 400;
   width: 50vw;
   height: 75vh;
-  box-shadow: 3px 3px darkgray;
+  box-shadow: 3px 3px whitesmoke;
   border-radius: 2em;
 }
 
@@ -28,9 +30,9 @@ body {
   align-self: flex-end;
   padding-right: 1em;
   background-color: black;
-  color: lime;
-  border-left: 1px solid lime;
-  border-bottom: 1px solid lime;
+  color: white;
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
   margin-right: 0.6em;
   margin-top: 0.1em;
   border-radius: 2em;
@@ -57,19 +59,19 @@ body {
 .gameHeader__button {
   background: none;
   outline: none;
-  color: lime;
+  color: white;
   border: 1px solid black;
   font-weight: 600;
 }
 
 .gameHeader__button:hover {
-  border: 1px solid lime;
+  border: 1px solid white;
   cursor: pointer;
 }
 
 .gameGrid {
   display: grid;
-  background: gray;
+  background: lightgray;
   gap: 1em;
   padding: 1em;
   height: 70%;
@@ -87,16 +89,4 @@ body {
   justify-content: center;
   background: black;
   cursor: pointer;
-}
-
-.gameGrid__Blue {
-  background: blue;
-}
-
-.gameGrid__Yellow {
-  background: yellow;
-}
-
-.gameGrid__tile:hover {
-  background: lime;
 }
