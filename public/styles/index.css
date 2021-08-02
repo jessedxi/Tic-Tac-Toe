@@ -36,8 +36,17 @@ body {
   border-radius: 2em;
   transform: skewX(-10deg);
 }
-
 .gameHeader__turn {
+  padding: 1em;
+}
+
+.gameHeader__turn__Blue {
+  color: blue;
+  padding: 1em;
+}
+
+.gameHeader__turn__Yellow {
+  color: yellow;
   padding: 1em;
 }
 
@@ -78,6 +87,14 @@ body {
   justify-content: center;
   background: black;
   cursor: pointer;
+}
+
+.gameGrid__Blue {
+  background: blue;
+}
+
+.gameGrid__Yellow {
+  background: yellow;
 }
 
 .gameGrid__tile:hover {
