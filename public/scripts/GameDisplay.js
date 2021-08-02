@@ -1,10 +1,12 @@
+let tileClass = "";
 export default class GameDisplay {
   constructor(root) {
+    this.tileClass = "gameGrid__tile";
     this.root = root;
     this.root.innerHTML = `
           <div class="gameHeader">
-              <div class="gameHeader__turn"> Blue Turn</div>
-              <div class="gameHeader__gameStatus"> In Progress...</div>
+              <div class="gameHeader__turn"></div>
+              <div class="gameHeader__gameStatus"></div>
               <button type="button" class="gameHeader__button">
                   RESTART
               </button>
@@ -32,11 +34,54 @@ export default class GameDisplay {
     });
 
     this.root
-      .querySelector(".gameGeader__button")
+      .querySelector(".gameHeader__button")
       .addEventListener("click", () => {
         if (this.onRestart) {
           this.onRestart();
         }
       });
+  }
+
+  update(game) {
+    this.updateTurn(game);
+    this.updateStatus(game);
+    this.updateGrid(game);
+  }
+
+  updateStatus(game) {
+    let status = "In Progress...";
+
+    if (game.checkForWin()) {
+      status = `${game.turn} has won!  `;
+    } else if (!game.unResolved()) {
+      status = "Game Draw";
+    }
+
+    this.root.querySelector(".gameHeader__gameStatus").textContent = status;
+  }
+
+  updateTurn(game) {
+    this.turnClass = `gameHeader__turn__${game.turn}`;
+    this.root.querySelector(
+      `.gameHeader__turn`
+    ).textContent = `${game.turn}'s Turn`;
+  }
+
+  updateGrid(game) {
+    const victory = game.checkForWin();
+
+    for (let i = 0; i < game.grid.length; i++) {
+      const tile = this.root.querySelector(
+        `.gameGrid__tile[data-index="${i}"]`
+      );
+      console.log(game.grid[i]);
+      tile.textContent = game.grid[i];
+
+      if (game.grid[i] !== null) {
+        tile.style.backgroundColor = `${game.grid[i]}`;
+      } else {
+        tile.style.backgroundColor = "black";
+      }
+    }
   }
 }
