@@ -1,7 +1,6 @@
 let tileClass = "";
 export default class GameDisplay {
   constructor(root) {
-    this.tileClass = "gameGrid__tile";
     this.root = root;
     this.root.innerHTML = `
           <div class="gameHeader">
@@ -49,7 +48,7 @@ export default class GameDisplay {
   }
 
   updateStatus(game) {
-    let status = "In Progress...";
+    let status = "Game In Progress...";
 
     if (game.checkForWin()) {
       status = `${game.turn} has won!  `;
@@ -61,10 +60,9 @@ export default class GameDisplay {
   }
 
   updateTurn(game) {
-    this.turnClass = `gameHeader__turn__${game.turn}`;
-    this.root.querySelector(
-      `.gameHeader__turn`
-    ).textContent = `${game.turn}'s Turn`;
+    const turn = this.root.querySelector(`.gameHeader__turn`);
+    turn.textContent = `${game.turn}'s Turn`;
+    turn.style.color = game.turn;
   }
 
   updateGrid(game) {
@@ -74,8 +72,6 @@ export default class GameDisplay {
       const tile = this.root.querySelector(
         `.gameGrid__tile[data-index="${i}"]`
       );
-      console.log(game.grid[i]);
-      tile.textContent = game.grid[i];
 
       if (game.grid[i] !== null) {
         tile.style.backgroundColor = `${game.grid[i]}`;
