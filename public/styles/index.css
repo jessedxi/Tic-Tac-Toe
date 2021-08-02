@@ -24,6 +24,10 @@ body {
   border-radius: 2em;
 }
 
+#shareBtn {
+  display: none;
+}
+
 .gameHeader {
   display: flex;
   align-items: center;
