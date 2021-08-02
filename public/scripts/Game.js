@@ -19,11 +19,11 @@ export default class Game {
   }
 
   placeColor(index) {
-    if (this.finished()) {
+    if (!this.unResolved()) {
       return;
     }
 
-    if (this.board[index]) {
+    if (this.grid[index]) {
       return;
     }
 
@@ -34,18 +34,7 @@ export default class Game {
   }
 
   checkForWin() {
-    const possibleWins = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-
-    for (const win of possibleWins) {
+    for (const win of this.possibleWins) {
       const [index1, index2, index3] = win;
 
       if (
@@ -76,7 +65,7 @@ export default class Game {
     return gameWon;
   }
 
-  finished() {
-    return this.checkForWin() && !this.grid.includes(null);
+  unResolved() {
+    return !this.checkForWin() && this.grid.includes(null);
   }
 }
