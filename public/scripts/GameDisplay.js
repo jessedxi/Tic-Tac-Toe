@@ -37,6 +37,7 @@ export default class GameDisplay {
       .addEventListener("click", () => {
         if (this.onRestart) {
           this.onRestart();
+          document.getElementById("shareBtn").style.display = "none";
         }
       });
   }
@@ -52,6 +53,7 @@ export default class GameDisplay {
 
     if (game.checkForWin()) {
       status = `${game.turn} has won!  `;
+      document.getElementById("shareBtn").style.display = "flex";
     } else if (!game.unResolved()) {
       status = "Game Draw";
     }
