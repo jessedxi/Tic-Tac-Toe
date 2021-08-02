@@ -5,7 +5,13 @@ let game = new Game();
 let gameDisplay = new GameDisplay(document.getElementById("app"));
 
 gameDisplay.onTileClick = (index) => {
-  console.log(index);
+  game.placeColor(index);
+  gameDisplay.update(game);
 };
 
-gameDisplay.onRestart = () => {};
+gameDisplay.onRestart = () => {
+  game = new Game();
+  gameDisplay.update(game);
+};
+
+gameDisplay.update(game);
