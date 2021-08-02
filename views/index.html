@@ -10,9 +10,31 @@
 </head>
 
 <body>
+  <script>
+    window.fbAsyncInit = function () {
+      FB.init({
+        appId: '1018855102208221',
+        autoLogAppEvents: true,
+        xfbml: true,
+        version: 'v11.0'
+      });
+    };
+  </script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <h1 id="title">Welcome to TIC-TAC-TOE</h1>
   <div id="app"></div>
   <script src="/scripts/main.js" type="module"></script>
+
+  <div id="shareBtn" class="btn btn-success clearfix">Share Dialog</div>
+  <script>
+    document.getElementById('shareBtn').onclick = function () {
+      FB.ui({
+        display: 'popup',
+        method: 'share',
+        href: 'http://localhost:3000/'
+      }, function (response) { });
+    }
+  </script>
 </body>
 
 </html>
