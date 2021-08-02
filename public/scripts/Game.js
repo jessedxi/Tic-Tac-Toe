@@ -24,6 +24,7 @@ export default class Game {
     }
 
     if (this.grid[index]) {
+      window.alert("Error, tile already played!");
       return;
     }
 
