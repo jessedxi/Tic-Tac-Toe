@@ -25,7 +25,7 @@
   <div id="app"></div>
   <script src="/scripts/main.js" type="module"></script>
 
-  <div id="shareBtn" class="btn btn-success clearfix">Share Dialog</div>
+  <div id="shareBtn" class="btn btn-success clearfix">Share Victory!</div>
   <script>
     document.getElementById('shareBtn').onclick = function () {
       FB.ui({
@@ -33,9 +33,14 @@
         method: 'share',
         href: 'https://tic-tac-toe-jessedxi.herokuapp.com/',
         quote: "I Just Beat my Opponent at Tic-Tac-Toe, can you win?"
+
       }, function (response) { });
     }
   </script>
+  <script>
+
+  </script>
+
 </body>
 
 </html>
