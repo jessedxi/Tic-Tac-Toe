@@ -28,7 +28,7 @@ export default class Game {
       window.alert("Error, tile already played!");
       return;
     }
-    console.log(index);
+
     this.grid[index] = this.turn;
     if (!this.checkForWin()) {
       this.toggleTurn();
@@ -49,22 +49,6 @@ export default class Game {
     }
 
     return null;
-  }
-
-  checkWin() {
-    let combinations = this.grid.reduce(
-      (acc, color, square) => (
-        color === this.turn ? acc.concat(square) : acc, []
-      )
-    );
-    let gameWon = null;
-    for (let [index, win] of this.possibleWins.entries()) {
-      if (win.every((element) => combinations.idexOf(element > -1))) {
-        gameWon = { index: index, player: this.turn };
-        break;
-      }
-    }
-    return gameWon;
   }
 
   unResolved() {
