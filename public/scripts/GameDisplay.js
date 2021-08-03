@@ -1,11 +1,14 @@
-let tileClass = "";
 export default class GameDisplay {
   constructor(root) {
+    this.random = "off";
     this.root = root;
     this.root.innerHTML = `
           <div class="gameHeader">
               <div class="gameHeader__turn"></div>
               <div class="gameHeader__gameStatus"></div>
+              <button type="button" class="gameHeader__random">
+                  RANDOM
+              </button>
               <button type="button" class="gameHeader__button">
                   RESTART
               </button>
@@ -38,6 +41,16 @@ export default class GameDisplay {
         if (this.onRestart) {
           this.onRestart();
           document.getElementById("shareBtn").style.display = "none";
+          this.random = "off";
+        }
+      });
+    this.root
+      .querySelector(".gameHeader__random")
+      .addEventListener("click", () => {
+        if (this.random === "off") {
+          this.random = "on";
+        } else {
+          this.random = "off";
         }
       });
   }
@@ -74,8 +87,6 @@ export default class GameDisplay {
   }
 
   updateGrid(game) {
-    const victory = game.checkForWin();
-
     for (let i = 0; i < game.grid.length; i++) {
       const tile = this.root.querySelector(
         `.gameGrid__tile[data-index="${i}"]`
