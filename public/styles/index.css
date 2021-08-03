@@ -94,7 +94,7 @@ p {
 
 .gameGrid {
   display: grid;
-  background: lightgray;
+  background: grey;
   gap: 1em;
   padding: 1em;
   height: 70%;
@@ -118,7 +118,7 @@ p {
   border: 1px solid lime;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 540px) {
   #app {
     width: 80vw;
     height: 70vh;
@@ -140,6 +140,19 @@ p {
   }
 
   .gameIntro {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .gameHeader {
+    width: 90%;
+    font-size: 12px;
+  }
+  .gameHeader__button {
+    font-size: 12px;
+  }
+  .gameHeader__random {
     font-size: 12px;
   }
 }
