@@ -10,9 +10,24 @@ body {
   flex-direction: column;
   background-image: linear-gradient(lightblue, lightyellow);
 }
-#title {
+.title {
   color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
+.gameIntro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 10vh;
+  width: 70vw;
+}
+
+p {
+  margin: 0 !important;
+}
+
 #app {
   background-color: black;
   display: flex;
@@ -26,6 +41,10 @@ body {
 
 #shareBtn {
   display: none;
+}
+#shareBtn:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 .gameHeader {
@@ -93,4 +112,30 @@ body {
   justify-content: center;
   background: black;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  #app {
+    width: 80vw;
+    height: 70vh;
+  }
+  .gameGrid {
+    height: 70%;
+    width: 70%;
+    gap: 0.5em;
+    padding: 0.5em;
+  }
+
+  .gameGrid__tile {
+    border-radius: 30%;
+  }
+
+  .gameHeader {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  .gameIntro {
+    font-size: 12px;
+  }
 }
