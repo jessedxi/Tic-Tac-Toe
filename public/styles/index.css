@@ -114,6 +114,10 @@ p {
   cursor: pointer;
 }
 
+.gameGrid__tile:hover {
+  border: 1px solid lime;
+}
+
 @media (max-width: 480px) {
   #app {
     width: 80vw;
