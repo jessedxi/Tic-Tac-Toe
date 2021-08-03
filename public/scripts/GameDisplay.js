@@ -49,7 +49,13 @@ export default class GameDisplay {
   }
 
   updateStatus(game) {
-    let status = "Game In Progress...";
+    let status = "Game Start";
+
+    for (let i = 0; i < game.grid.length; i++) {
+      if (game.grid[i] !== null) {
+        status = "Game in progres...";
+      }
+    }
 
     if (game.checkForWin()) {
       status = `${game.turn} has won!  `;
