@@ -13,6 +13,7 @@ body {
 .title {
   color: black;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  justify-self: start;
 }
 .gameIntro {
   display: flex;
@@ -22,6 +23,8 @@ body {
   text-align: center;
   height: 10vh;
   width: 70vw;
+  margin-top: -1em;
+  margin-bottom: 1em;
 }
 
 p {
