@@ -12,6 +12,7 @@ export default class Game {
       [0, 4, 8],
       [2, 4, 6],
     ];
+    this.playableTiles = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   }
 
   toggleTurn() {
@@ -27,7 +28,7 @@ export default class Game {
       window.alert("Error, tile already played!");
       return;
     }
-
+    console.log(index);
     this.grid[index] = this.turn;
     if (!this.checkForWin()) {
       this.toggleTurn();
