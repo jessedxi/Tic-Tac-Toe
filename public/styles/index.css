@@ -63,23 +63,8 @@ p {
   margin-top: 0.1em;
   border-radius: 2em;
   transform: skewX(-10deg);
-}
-.gameHeader__turn {
-  padding: 1em;
-}
-
-.gameHeader__turn__Blue {
-  color: blue;
-  padding: 1em;
-}
-
-.gameHeader__turn__Yellow {
-  color: yellow;
-  padding: 1em;
-}
-
-.gameHeader__gameStatus {
-  padding: 1em;
+  width: 80%;
+  justify-content: space-between;
 }
 
 .gameHeader__button {
@@ -119,6 +104,11 @@ p {
 
 .gameGrid__tile:hover {
   border: 1px solid lime;
+}
+.randomMessage {
+  color: white;
+  padding: 1em;
+  align-self: center;
 }
 
 @media (max-width: 540px) {
