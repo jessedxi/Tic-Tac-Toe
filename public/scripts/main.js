@@ -1,5 +1,6 @@
 import Game from "./Game.js";
 import GameDisplay from "./GameDisplay.js";
+require("dotenv").config();
 
 let game = new Game();
 let gameDisplay = new GameDisplay(document.getElementById("app"));
