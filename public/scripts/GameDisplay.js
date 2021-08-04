@@ -30,12 +30,14 @@ export default class GameDisplay {
     this.onTileClick = undefined;
     this.onRestart = undefined;
 
+    //handles tile clicks
     this.root.querySelectorAll(".gameGrid__tile").forEach((tile) => {
       tile.addEventListener("click", () => {
         this.onTileClick(tile.dataset.index);
       });
     });
 
+    // handles restart button clicks
     this.root
       .querySelector(".gameHeader__button")
       .addEventListener("click", () => {
@@ -45,6 +47,8 @@ export default class GameDisplay {
           this.random = "off";
         }
       });
+
+    // handles random button clicks
     this.root
       .querySelector(".gameHeader__random")
       .addEventListener("click", () => {
