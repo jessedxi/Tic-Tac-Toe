@@ -64,6 +64,8 @@ p {
   border-radius: 2em;
   transform: skewX(-10deg);
   width: 80%;
+  min-height: 2em;
+  margin-top: 0.5em;
   justify-content: space-between;
 }
 
@@ -78,6 +80,9 @@ p {
 .gameHeader__button:hover {
   border: 1px solid white;
   cursor: pointer;
+}
+.gameHeader__turn {
+  padding: 1em;
 }
 
 .gameGrid {
@@ -111,7 +116,7 @@ p {
   align-self: center;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 775px) {
   #app {
     width: 80vw;
     height: 70vh;
@@ -130,6 +135,7 @@ p {
   .gameHeader {
     width: 80%;
     font-size: 12px;
+    margin-right: 1em;
   }
 
   .gameIntro {
