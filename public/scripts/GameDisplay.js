@@ -24,6 +24,7 @@ export default class GameDisplay {
               <div class="gameGrid__tile" data-index="7"></div>
               <div class="gameGrid__tile" data-index="8"></div>
           </div>
+          <div class=randomMessage>Random Mode Disabled</div>
       `;
 
     this.onTileClick = undefined;
@@ -49,8 +50,12 @@ export default class GameDisplay {
       .addEventListener("click", () => {
         if (this.random === "off") {
           this.random = "on";
+          this.root.querySelector(".randomMessage").textContent =
+            "Random Mode Endabled";
         } else {
           this.random = "off";
+          this.root.querySelector(".randomMessage").textContent =
+            "Random Mode Disabled";
         }
       });
   }
